@@ -9,7 +9,9 @@ This is a repository for study material and exercises for development with flutt
 
 The workspace I'm currentlu using is composed by Debian 12, with neovim as editor, android emulator provided by Android Studio, with the flutter-tools neovim plugin this workflow works seameless.
 
-![Demo](./assets/Screencast_demo.webm)
+<!-- ![Demo](./assets/Screencast_demo.webm) -->
+<video src='./assets/Screencast_demo.webm' width=320/>
+
 # helpfull links
 
 [flutter-tools](https://github.com/nvim-flutter/flutter-tools.nvim)
