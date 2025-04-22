@@ -1,4 +1,4 @@
-# app2
+# snackbar
 
 A new Flutter project.
 

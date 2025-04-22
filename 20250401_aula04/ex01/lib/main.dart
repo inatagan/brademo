@@ -7,10 +7,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Retrieve Text Input',
-      home: MyCustomForm(),
-    );
+    return MaterialApp(title: 'Retrieve Text Input', home: MyCustomForm());
   }
 }
 
@@ -44,38 +41,36 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Retrieve Text Input')),
-      body: Column(children: [
-        Padding(
-        padding: const EdgeInsets.all(16),
-        child: TextField(controller: myController),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(controller: myController),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(controller: myController1),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextField(controller: myController2),
+          ),
+        ],
       ),
-      Padding(
-        padding: const EdgeInsets.all(16),
-        child: TextField(controller: myController1),
-      ),
-      Padding(
-        padding: const EdgeInsets.all(16),
-        child: TextField(controller: myController2),
-      ),
-      ],),
       floatingActionButton: FloatingActionButton(
         // When the user presses the button, show an alert dialog containing
         // the text that the user has entered into the text field.
         onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) {
-return AlertDialog(
-                // Retrieve the text the that user has entered by using the
-                // TextEditingController.
-                content: Column(children: [
-                  Text(myController.text),
-                  Text(myController1.text),
-                  Text(myController2.text),
-                ],),
-              );
-            },
+          final snackBar = SnackBar(
+            content: Column(
+              children: [
+                Text(myController.text),
+                Text(myController1.text),
+                Text(myController2.text),
+              ],
+            ),
           );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar); // showDialog(
         },
         tooltip: 'Show me the value!',
         child: const Icon(Icons.text_fields),
@@ -83,3 +78,4 @@ return AlertDialog(
     );
   }
 }
+
